@@ -1,0 +1,30 @@
+{
+  "name": "basedemo",
+  "version": "1.0.0",
+  "description": "小项目",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --open",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ahuiorg/basedemo.git"
+  },
+  "keywords": [
+    "demo"
+  ],
+  "author": "ahui",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ahuiorg/basedemo/issues"
+  },
+  "homepage": "https://github.com/Ahuiorg/basedemo#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^4.3.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
