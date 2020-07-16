@@ -4,7 +4,7 @@
   "description": "小项目",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node server/index.js",
     "dev": "webpack-dev-server --open",
     "build": "webpack"
   },
