@@ -1,27 +1,70 @@
-// 实现一个学生类，id,name2个属性，做到id相同表示同一个人；名字相同不一定是同一个人，你会实现哪些方法。
-class Student {
-  constructor(id, name) {
-    this.id = id
-    this.name = name
-  }
-
-  isPerson(someOne) {
-    return someOne.id === this.id
-  }
+function isPromise(obj) {
+    return (typeof obj === 'function' || typeof obj === 'object') && typeof obj.then === 'function'
 }
 
-// function Student (id, name) {
-//   this.id = id
-//   this.name = name
-// }
+function myPromiseAll(arr) {
+    let requires = []
+    return new Promise((resolve, reject) => {
+        arr.map((item, idx) => {
+            if (isPromise(item)) {
+                item.then((res) => {
+                    requires[idx] = res
+                    if (requires.length === arr.length) {
+                        resolve(requires)
+                    }
+                }).catch((err) => {
+                    reject(err)
+                })
+            } else {
+                requires[idx] = item
+            }
+        })
+    })
+}
 
-// Student.prototype.isPerson = function (someOne) {
-//   return someOne.id === this.id
-// }
+function myCloneDeep(obj) {
+    if (typeof obj === 'object') {
+        const temp = Array.isArray(obj) ? [] : {}
 
-let ahui1 = new Student(1, 'ahui')
-let ahui2 = new Student(1, 'ahui2')
-let ahui3 = new Student(3, 'ahui')
+        for (const key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                if (typeof obj[key] === 'object') {
+                    temp[key] = myCloneDeep(obj[key])
+                } else {
+                    temp[key] = obj[key]
+                }
+            }
+        }
+        return temp
+    }
+    return obj
+}
 
-console.log(ahui1.isPerson(ahui2)) // true
-console.log(ahui1.isPerson(ahui3)) // false
+
+let fibonacci = (function (n) {
+    let cache = {}
+    return function (n) {
+        if (n === 1 || n === 2) return 1
+        if (cache[n]) return cache[n]
+        return cache[n] = fibonacci(n - 1) + fibonacci(n - 2)
+    }
+})()
+
+
+console.log(fibonacci(6));
+// 柯里化
+
+function add() {
+    let _args = [...arguments]
+    let _add = function () {
+        _args.push(...arguments)
+        return _add
+    }
+    _add.toString = () => _args.reduce((total, arg) => total + arg, 0)
+    return _add
+}
+
+console.log(add(1, 2, 3)(4, 5)); 
+
+
+
