@@ -217,7 +217,6 @@
 // }
 // console.log(arr);
 
-function printArr(20) {
-
-	
+function printArr() {
+    console.log(20);
 }
