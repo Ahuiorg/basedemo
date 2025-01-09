@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>古茗 - 商家</title>
+    <style>
+        /* 复用基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            padding-bottom: 50px;
+        }
+
+        /* 头部样式保持不变 */
+        .shop-header {
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            color: white;
+            padding: 15px;
+        }
+
+        .shop-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .shop-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .shop-detail h1 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .notice {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* 选项卡样式 */
+        .tabs {
+            display: flex;
+            background: white;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .tab.active {
+            color: #ff758c;
+            border-bottom: 2px solid #ff758c;
+        }
+
+        /* 商家信息样式 */
+        .shop-content {
+            background: white;
+            padding: 15px;
+            margin-top: 10px;
+        }
+
+        .address {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        .address-icon {
+            color: #ff758c;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        .address-text {
+            flex: 1;
+            font-size: 14px;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        .license-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        .license-link {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .license-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        .delivery-time {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f5f5f5;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .service-item {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .service-item::before {
+            content: "✓";
+            color: #52c41a;
+            margin-right: 5px;
+        }
+
+        /* 底部结算栏样式保持不变 */
+        .checkout-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background: rgba(61, 61, 61, 0.9);
+            color: white;
+        }
+
+        .cart {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cart-icon {
+            position: relative;
+            font-size: 24px;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ff758c;
+            color: white;
+            font-size: 12px;
+            padding: 2px 6px;
+            border-radius: 10px;
+            min-width: 18px;
+            text-align: center;
+        }
+
+        .submit-btn {
+            background: #ff758c;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header class="shop-header">
+        <div class="shop-info">
+            <div class="shop-logo"></div>
+            <div class="shop-detail">
+                <h1>古茗</h1>
+                <p class="notice">公告：车厘子系列上新！智利车厘子，碰撞草莓蓝莓，一杯喝掉每日所需花青素！</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="tabs">
+        <div class="tab"><a href="./menu.html">菜单</a></div>
+        <div class="tab"><a href="./evaluation.html">评价(99+)</a></div>
+        <div class="tab active">商家</div>
+    </div>
+
+    <div class="shop-content">
+        <div class="address">
+            <span class="address-icon">📍</span>
+            <div class="address-text">
+                湖南省长沙市望城区高塘岭街道文源商贸城A21层169号
+            </div>
+        </div>
+
+        <div class="license-links">
+            <div class="license-link">
+                <span class="license-icon">🔒</span>
+                查看食品安全档案
+            </div>
+            <div class="license-link">
+                <span class="license-icon">🌱</span>
+                查看商家青山档案
+            </div>
+        </div>
+
+        <div class="delivery-time">
+            配送时间：09:30-21:00
+        </div>
+
+        <div class="services">
+            <div class="service-item">跨天预订</div>
+            <div class="service-item">到店自取（享优惠）</div>
+            <div class="service-item">全牌店铺</div>
+            <div class="service-item">准时宝</div>
+            <div class="service-item">放心吃</div>
+            <div class="service-item">热情掌柜</div>
+            <div class="service-item">食材展示</div>
+        </div>
+    </div>
+
+    <footer class="checkout-bar">
+        <div class="cart">
+            <div class="cart-icon">
+                🛒
+                <span class="cart-count">0</span>
+            </div>
+            <span class="total-price">¥0</span>
+        </div>
+        <button class="submit-btn">提交订单</button>
+    </footer>
+</body>
+</html>

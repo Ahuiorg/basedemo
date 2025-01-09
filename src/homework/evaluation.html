@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>古茗 - 评价</title>
+    <style>
+        /* 复用之前的基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            padding-bottom: 50px;
+        }
+
+        /* 头部样式保持不变 */
+        .shop-header {
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            color: white;
+            padding: 15px;
+        }
+
+        .shop-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .shop-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .shop-detail h1 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .notice {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* 选项卡样式保持不变 */
+        .tabs {
+            display: flex;
+            background: white;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .tab.active {
+            color: #ff758c;
+            border-bottom: 2px solid #ff758c;
+        }
+
+        /* 评价列表样式 */
+        .evaluation-list {
+            background: white;
+            padding: 15px;
+        }
+
+        .evaluation-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        .evaluation-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #f0f0f0;
+            margin-right: 10px;
+        }
+
+        .user-info {
+            flex: 1;
+        }
+
+        .user-name {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .evaluation-date {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .star-rating {
+            display: flex;
+            gap: 2px;
+            margin-bottom: 8px;
+        }
+
+        .star {
+            color: #ffd700;
+            font-size: 12px;
+        }
+
+        .evaluation-content {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        /* 底部结算栏样式保持不变 */
+        .checkout-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background: rgba(61, 61, 61, 0.9);
+            color: white;
+        }
+
+        .cart {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cart-icon {
+            position: relative;
+            font-size: 24px;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ff758c;
+            color: white;
+            font-size: 12px;
+            padding: 2px 6px;
+            border-radius: 10px;
+            min-width: 18px;
+            text-align: center;
+        }
+
+        .submit-btn {
+            background: #ff758c;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header class="shop-header">
+        <div class="shop-info">
+            <div class="shop-logo"></div>
+            <div class="shop-detail">
+                <h1>古茗</h1>
+                <p class="notice">公告：车厘子系列上新！智利车厘子，碰撞草莓蓝莓，一杯喝掉每日所需花青素！</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="tabs">
+        <div class="tab"><a href="./menu.html">菜单</a></div>
+        <div class="tab active">评价(99+)</div>
+        <div class="tab"><a href="./shop.html">商家</a></div>
+    </div>
+
+    <div class="evaluation-list">
+        <div class="evaluation-item">
+            <div class="evaluation-header">
+                <div class="user-avatar"></div>
+                <div class="user-info">
+                    <div class="user-name">十二</div>
+                    <div class="evaluation-date">2024/6/1</div>
+                </div>
+            </div>
+            <div class="star-rating">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+            </div>
+            <div class="evaluation-content">
+                很贴心，冷的和热的还是分开打包的，贴了封口贴，包装很严实的，这来没有撒
+            </div>
+        </div>
+
+        <div class="evaluation-item">
+            <div class="evaluation-header">
+                <div class="user-avatar"></div>
+                <div class="user-info">
+                    <div class="user-name">第181秒</div>
+                    <div class="evaluation-date">2024/8/9</div>
+                </div>
+            </div>
+            <div class="star-rating">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+            </div>
+            <div class="evaluation-content">
+                古茗的这款草莓车厘子新品真的超级无敌好喝，喝的到的新鲜果肉，真的是良心商家，满杯都是料，强烈推介大家试一下！茉莉也是纯茶爱好者的必选，喜欢喝纯茶的真的推介试一下，绝对不会踩雷，超级好喝！！
+            </div>
+        </div>
+
+        <div class="evaluation-item">
+            <div class="evaluation-header">
+                <div class="user-avatar"></div>
+                <div class="user-info">
+                    <div class="user-name">501</div>
+                    <div class="evaluation-date">2024/9/21</div>
+                </div>
+            </div>
+            <div class="star-rating">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+            </div>
+            <div class="evaluation-content">
+                我真的，真的真的吹爆这款奶茶。前前后后买了不下十喝了，各种口味都超级好喝。港式，抹茶，茉莉茶，白桃乌龙，都是我的心头爱。这款奶茶低糖，太适合我们这种喝了又怕长胖的人了。每次我都是收藏起来，赶搞活动就开始囤囤囤。。。总之，非常推荐！
+            </div>
+        </div>
+    </div>
+
+    <footer class="checkout-bar">
+        <div class="cart">
+            <div class="cart-icon">
+                🛒
+                <span class="cart-count">0</span>
+            </div>
+            <span class="total-price">¥0</span>
+        </div>
+        <button class="submit-btn">提交订单</button>
+    </footer>
+</body>
+</html>

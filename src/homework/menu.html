@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>古茗</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            padding-bottom: 50px; /* 为底部结算栏留出空间 */
+        }
+
+        /* 头部样式 */
+        .shop-header {
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            color: white;
+            padding: 15px;
+        }
+
+        .shop-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .shop-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            background: #fff; /* 临时替代图片 */
+        }
+
+        .shop-detail h1 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .notice {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* 选项卡样式 */
+        .tabs {
+            display: flex;
+            background: white;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .tab.active {
+            color: #ff758c;
+            border-bottom: 2px solid #ff758c;
+        }
+
+        /* 菜单列表样式 */
+        .menu-list {
+            background: white;
+            padding: 10px;
+        }
+
+        .menu-item {
+            display: flex;
+            padding: 15px 0;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        .product-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            background: #f0f0f0; /* 临时替代图片 */
+        }
+
+        .product-info {
+            flex: 1;
+            padding: 0 15px;
+        }
+
+        .product-info h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .size {
+            color: #999;
+            font-size: 12px;
+        }
+
+        .price {
+            color: #ff758c;
+            margin-top: 5px;
+            font-size: 16px;
+        }
+
+        .price::before {
+            content: '¥';
+            font-size: 12px;
+        }
+
+        /* 数量控制按钮 */
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .minus, .plus {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 1px solid #ff758c;
+            background: white;
+            color: #ff758c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .plus {
+            background: #ff758c;
+            color: white;
+        }
+
+        /* 底部结算栏 */
+        .checkout-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background: rgba(61, 61, 61, 0.9);
+            color: white;
+        }
+
+        .cart {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cart-icon {
+            position: relative;
+            font-size: 24px;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ff758c;
+            color: white;
+            font-size: 12px;
+            padding: 2px 6px;
+            border-radius: 10px;
+            min-width: 18px;
+            text-align: center;
+        }
+
+        .submit-btn {
+            background: #ff758c;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header class="shop-header">
+        <div class="shop-info">
+            <div class="shop-logo"></div>
+            <div class="shop-detail">
+                <h1>古茗</h1>
+                <p class="notice">公告：车厘子系列上新！智利车厘子，碰撞草莓蓝莓，一杯喝掉每日所需花青素！</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="tabs">
+        <div class="tab active">菜单</div>
+        <div class="tab"><a href="./evaluation.html">评价(99+)</a></div>
+        <div class="tab"><a href="./shop.html">商家</a></div>   
+    </div>
+
+    <div class="menu-list">
+        <!-- 重复的菜单项 -->
+        <div class="menu-item">
+            <div class="product-img"></div>
+            <div class="product-info">
+                <h3>百香果重奏</h3>
+                <p class="size">中杯</p>
+                <p class="price">16</p>
+            </div>
+            <div class="quantity-control">
+                <div class="minus">-</div>
+                <span class="count">0</span>
+                <div class="plus">+</div>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="product-img"></div>
+            <div class="product-info">
+                <h3>黑糖珍珠撞布蕾</h3>
+                <p class="size">中杯</p>
+                <p class="price">17</p>
+            </div>
+            <div class="quantity-control">
+                <div class="minus">-</div>
+                <span class="count">0</span>
+                <div class="plus">+</div>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="product-img"></div>
+            <div class="product-info">
+                <h3>满杯莓车厘</h3>
+                <p class="size">中杯</p>
+                <p class="price">19</p>
+            </div>
+            <div class="quantity-control">
+                <div class="minus">-</div>
+                <span class="count">0</span>
+                <div class="plus">+</div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="checkout-bar">
+        <div class="cart">
+            <div class="cart-icon">
+                🛒
+                <span class="cart-count">0</span>
+            </div>
+            <span class="total-price">¥0</span>
+        </div>
+        <button class="submit-btn">提交订单</button>
+    </footer>
+</body>
+</html>
+</html>
