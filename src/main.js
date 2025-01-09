@@ -1,7 +1,12 @@
+/*
+ * @Author: liph@300624.cn
+ * @Date: 2025-01-09 09:17:42
+ * @LastEditTime: 2025-01-09 10:06:44
+ * @Description: 
+ */
 import './style.css'
 import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
 
 document.querySelector('#app').innerHTML = `
   <div>
